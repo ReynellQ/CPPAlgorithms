@@ -1,8 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 vector<int> p, c;
-
 void count_sort(vector<int> &p, vector<int> &c){
     int n = p.size();
     vector<int> cnt(n), p_new(n), pos(n);
@@ -45,27 +41,4 @@ vector<int> suffix_array(string &s){
         k++;
     }  
     return p;
-}
-
-vector<int> lcp(vector<int> &p, vector<int> &c, string &s){
-    int n = p.size();
-    vector<int> lcp(n);
-    int k = 0;
-    for(int i = 0 ; i < n - 1 ; ++i){
-        int pi = c[i];
-        int j = p[pi - 1];
-        while(s[i + k] == s[j + k]) k++;
-        lcp[pi] = k;
-        k = max(k - 1, 0);
-    }
-    return lcp;
-}
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    string s = "ababba";
-    vector<int> sa = suffix_array(s);
-    for(auto &x : sa)
-        cout << x <<" ";
 }

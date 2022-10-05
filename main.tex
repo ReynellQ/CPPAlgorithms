@@ -3,17 +3,106 @@
 \usepackage{amsmath}
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{listings}
 \usepackage{xcolor}
+
+\definecolor{colorGreen}{rgb}{0,0.6,0}
+\definecolor{colorGray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{colorGreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{colorGray},
+    stringstyle=\color{orange},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=false,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,   
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 
 \title{Handbook}
 
 
-
 \begin{document}
 
-\begin{verbatim}
-    Hola
-\end{verbatim}
+\maketitle
 
+\section*{Grafos}
+    \subsection*{Dinic}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Dinic.cpp}
+
+\pagebreak
+\section*{Strings}
+    \subsection*{Función Z}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Strings/FuncionZ.cpp}
+    \subsection*{KMP}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Strings/kmp.cpp}
+    \subsection*{Suffix array}
+        Devuelve un arreglo con el orden lexicográfico de los sufijos de un string S
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Strings/Suffix Array/SuffixArray.cpp}
+        Java:
+        \lstinputlisting[language=Java]{Java/Strings/Suffix Array/SuffixArray.java}
+    \subsection*{Longest Common Prefix on Suffixs}
+        Devuelve un arreglo que contiene el largo del prefijo común máximo entre 2 sufijos i e i+1
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Strings/Suffix Array/LCP.cpp}
+        Java:
+        \lstinputlisting[language=Java]{Java/Strings/Suffix Array/LCP.java}
+\pagebreak
+\section*{Búsqueda}
+    \subsection*{Ternary Search}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/ternary_search.cpp}
+\pagebreak
+\section*{Geometría}
+    \subsection*{Convex Hull}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/convex_hull.cpp}
+\pagebreak
+\section*{Matemáticas}
+    \subsection*{Inverso Modular}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Inverso Modular.cpp}
+    \subsection*{Miller-Rabin}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Miller-Rabin.cpp}
+    \subsection*{Pollard Rho}
+        Insertar utilidad del algoritmo:
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Pollard Rho.cpp}
+\pagebreak
 \end{document}
