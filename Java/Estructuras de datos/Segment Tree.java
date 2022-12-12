@@ -20,8 +20,8 @@ static class ST{
 			return value;
 		}else{
 			if(i <= mid && j <= mid) return l.query(i, j);
-			if(i > mid) r.query(i, j); 
-			merge(l.query(i, mid), r.query(mid+1, j)); 
+			if(i > mid) return r.query(i, j);
+			return merge(l.query(i, mid), r.query(mid+1, j));
 		}
 	}
 	public void update(int a, int i){
