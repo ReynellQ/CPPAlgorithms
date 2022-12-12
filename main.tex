@@ -90,11 +90,64 @@
         \lstinputlisting[language=C++]{C++/convex_hull.cpp}
 \pagebreak
 \section{Matemáticas}
-    \subsection{Inverso Modular}
-        Insertar utilidad del algoritmo:
+    \subsection{Factorial modulo m}
+        Permite calcular $n! \mod{m}$
         \\ \\
         C++:
-        \lstinputlisting[language=C++]{C++/Inverso Modular.cpp}
+        \lstinputlisting[language=C++]{C++/Matematicas/factorial.cpp}
+    \subsection{Exponenciacion binaria}
+        Permite calcular $c \equiv a^b\pmod{m}$
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Matematicas/bin_pow.cpp}
+
+    \subsection{Inverso Modular}
+        Permite calcular $ a^{-1} \mod{m}$, este número satisface $a \cdot a^{-1} \equiv 1 \pmod{m}$
+        \\ \\
+        Con el pequeño teorema de Fermat, siempre que m sea primo, se calcula $x \equiv a^{m - 2} \pmod{m}$, siendo x su inverso modular.
+        \\ \\
+        Con el algoritmo de Euclides extendido, siempre y cuando $gcd(a, m) = 1$, se calculan $x, y$ tal que $ ax + my = 1$, por lo que
+        $ax \equiv 1 \pmod{m}$, siendo x el inverso modular 
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Matematicas/Inverso Modular.cpp}
+    \subsection{Inverso modular del factorial modulo m}
+        Permite calcular $ i!^{-1} \mod{m}$ para todo $1 \leq i \leq N$
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Matematicas/factorial.cpp}
+    \subsection{Coeficientes binomiales modulo m}
+        Calculo de $\binom{n}{k} \mod{m}$ de múltiples formas
+        \subsubsection{nCk $\mod{m}$ si m es primo}
+            Para $m \geq 10^9$, se puede emplear la fórmula recursiva
+            \[
+                \binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k} \mod{m}
+            \]
+            O la formula explicita mediante factoriales
+            \[
+                \binom{n}{k} = \frac{n!}{k!(n-k)!}  \mod m = n!\, k!^{-1}(n - k)!^{-1} \mod{m}
+            \]
+            \\ \\
+            C++:
+            \lstinputlisting[language=C++]{C++/Matematicas/combinatorial.cpp}
+            
+            Para $ m \leq 10^5$, se puede usar el teorema de Lucas que plantea
+            \[
+                \binom{n}{k} \mod{m} = \prod_{i = 1}^{log{m}}\binom{n_i}{k_i}
+            \]
+            Donde
+            \[
+                n_i = \frac{n_{i - 1}}{m}, \qquad n_0 = n
+            \]
+            \[
+                k_i = \frac{k_{i - 1}}{m}, \qquad k_0 = k
+            \]
+        \subsubsection{nCk $\mod{m}$ si m es compuesto}
+            Se realiza la descomposición en factores primos de m, resultando
+            \[
+                k_i = \frac{k_{i - 1}}{m}, \qquad k_0 = k
+            \]
+            Por cada factor primo se computa 
     \subsection{Miller-Rabin}
         Insertar utilidad del algoritmo:
         \\ \\
