@@ -74,6 +74,9 @@
         \lstinputlisting[language=C++]{C++/Strings/Suffix Array/LCP.cpp}
         Java:
         \lstinputlisting[language=Java]{Java/Strings/Suffix Array/LCP.java}
+    \subsection{Aho Corasick}
+        C++:
+        \lstinputlisting[language=C++]{C++/Strings/aho_corasick.cpp}
 \pagebreak
 \section{Búsqueda}
     \subsection{Ternary Search}
@@ -87,7 +90,20 @@
         Insertar utilidad del algoritmo:
         \\ \\
         C++:
-        \lstinputlisting[language=C++]{C++/convex_hull.cpp}
+        \lstinputlisting[language=C++]{C++/Geometria/convex_hull.cpp}
+    \subsection{Interseccion de lineas}
+        C++:
+        \lstinputlisting[language=C++]{C++/Geometria/intersection_in_lines.cpp}
+    \subsection{Punto en polígono}
+        C++:
+        \lstinputlisting[language=C++]{C++/Geometria/point_in_polygon.cpp}
+    \subsection{Ordenamiento por ángulo polar}
+        C++:
+        \lstinputlisting[language=C++]{C++/Geometria/sortPointsByAngle.cpp}
+    \subsection{Área de polígono}
+        C++:
+        \lstinputlisting[language=C++]{C++/Geometria/polygon_area.cpp}
+      
 \pagebreak
 \section{Matemáticas}
     \subsection{Factorial modulo m}
@@ -106,11 +122,11 @@
         \\ \\
         Con el pequeño teorema de Fermat, siempre que m sea primo, se calcula $x \equiv a^{m - 2} \pmod{m}$, siendo x su inverso modular.
         \\ \\
-        Con el algoritmo de Euclides extendido, siempre y cuando $gcd(a, m) = 1$, se calculan $x, y$ tal que $ ax + my = 1$, por lo que
+        Con el algoritmo de Euclides extendido, siempre y cuando $\gcd(a, m) = 1$, se calculan $x, y$ tal que $ ax + my = 1$, por lo que
         $ax \equiv 1 \pmod{m}$, siendo x el inverso modular 
         \\ \\
         C++:
-        \lstinputlisting[language=C++]{C++/Matematicas/Inverso Modular.cpp}
+        \lstinputlisting[language=C++]{C++/Matematicas/inv_mod.cpp}
     \subsection{Inverso modular del factorial modulo m}
         Permite calcular $ i!^{-1} \mod{m}$ para todo $1 \leq i \leq N$
         \\ \\
@@ -133,7 +149,7 @@
             
             Para $ m \leq 10^5$, se puede usar el teorema de Lucas que plantea
             \[
-                \binom{n}{k} \mod{m} = \prod_{i = 1}^{log{m}}\binom{n_i}{k_i}
+                \binom{n}{k} \mod{m} = \prod_{i = 1}^{\log{m}}\binom{n_i}{k_i}
             \]
             Donde
             \[
@@ -149,14 +165,18 @@
             \]
             Por cada factor primo se computa 
     \subsection{Miller-Rabin}
-        Insertar utilidad del algoritmo:
+        Test de primalidad.
         \\ \\
         C++:
         \lstinputlisting[language=C++]{C++/Miller-Rabin.cpp}
     \subsection{Pollard Rho}
-        Insertar utilidad del algoritmo:
+        Encontrar un divisor de P.
         \\ \\
         C++:
-        \lstinputlisting[language=C++]{C++/Pollard Rho.cpp}
+        \lstinputlisting[language=C++]{C++/Pollard_Rho.cpp}
+    \subsection{Inclusión-Exclusión}
+        C++:
+        \lstinputlisting[language=C++]{C++/Matematicas/inclusion_exclusion.cpp}
+    \
 \pagebreak
 \end{document}

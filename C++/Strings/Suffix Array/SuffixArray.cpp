@@ -22,7 +22,8 @@ vector<int> suffix_array(string &s){
     sort(a.begin(), a.end());
     for(int i = 0 ; i < n ; ++i) p[i] = a[i].second;
     c[p[0]] = 0;
-    for(int i = 1 ; i < n ; ++i) c[p[i]] = a[i].first == a[i - 1].first ? c[p[i - 1]] : c[p[i - 1]] + 1;
+    for(int i = 1 ; i < n ; ++i)
+      c[p[i]] = a[i].first == a[i - 1].first ? c[p[i - 1]] : c[p[i - 1]] + 1;
     int k = 0, shift;
     while( (1<<k) < n ){
         shift = 1<<k;
