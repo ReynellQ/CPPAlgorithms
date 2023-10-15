@@ -41,10 +41,11 @@ int bfs(int &ori, int &target){
   return sn[target];
 }
 
-int dfs(int ori, int &target, int min_flow){
-  int flow = INF, y;
+int dfs(int ori, int &target, int min_flow, vector<int> &dp){
+  int flow = INF, y, e_id;
 
-  for(auto &e_id: grafo[ori]){
+  for(int &pos = dp[ori]; pos < grafo[ori].size(); ++pos){
+    e_id = grafo[ori][pos];
     auto &e = edges[e_id];
     y = e.y;
 
@@ -59,7 +60,7 @@ int dfs(int ori, int &target, int min_flow){
       return flow;
     }
 
-    flow = dfs(y, target, min(min_flow, e.flow));
+    flow = dfs(y, target, min(min_flow, e.flow), dp);
 
     if(flow != INF){
       edges[e_id].flow -= flow;
