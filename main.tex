@@ -121,13 +121,22 @@
       
 \pagebreak
 \section{Matemáticas}
+    \subsection{Función $\phi$ de Euler}
+        Permite calcular $\phi(n)$, que equivale a los números menores que n y coprimos a este. Para números primos, $\phi(n)= n - 1$ 
+        \\ \\
+        C++:
+        \lstinputlisting[language=C++]{C++/Matematicas/euler_phi.cpp}
     \subsection{Factorial modulo m}
         Permite calcular $n! \mod{m}$
         \\ \\
         C++:
         \lstinputlisting[language=C++]{C++/Matematicas/factorial.cpp}
     \subsection{Exponenciacion binaria}
-        Permite calcular $c \equiv a^b\pmod{m}$
+        Permite calcular $c \equiv a^b\pmod{m}$.
+        \\ \\
+        Para valores de b muy grandes, $ a^b \equiv a^{b\mod{\phi(m)}} \pmod{m}$.
+        \\
+        Siguiendo lo anterior, si m es primo: $ a^b \equiv a^{b\mod{m - 1}}\pmod{m}$
         \\ \\
         C++:
         \lstinputlisting[language=C++]{C++/Matematicas/bin_pow.cpp}
