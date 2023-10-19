@@ -49,11 +49,32 @@
         \lstinputlisting[language=C++]{C++/Grafos/Dinic.cpp}
 
     \subsection{Bridges}
-        Encuentra las aristas (u, v) que si son retiradas del grafo, producen dos componentes \\
-        completamente aisladas.
+        Encuentra las aristas (u, v) que si son retiradas del grafo, producen dos
+        componentes completamente aisladas. Es posible comprimir el grafo en un arbol
+        usando DSU, al hacer por cada $i$ un $merge(tin[i], low[i])$.
         \\ \\
         C++:
         \lstinputlisting[language=C++]{C++/Grafos/bridges.cpp}
+
+    \subsection{Articulation Points}
+        Encuentra los nodos que si son retirados del grtafo producen dos componentes completamente aisladas.
+        \\ \\
+        C++
+        \lstinputlisting[language=C++]{C++/Grafos/articulations.cpp}
+
+    \subsection{Floyd-Warshall}
+        Encuentra los caminos mas cortos para todo par de nodos.\\ \\
+        C++
+        \lstinputlisting[language=C++]{C++/Grafos/FloydWarshall.cpp}
+
+    \subsection{Bellman-Ford}
+        Encuentra el camino mas corto desde un nodo de origen a todos los demás nodos
+        en caso de que existan aristas negativas. Es posible también detectar ciclos negativos
+        si $s[t] == -MAX$, dando a entender que el nodo $t$ forma parte de un ciclo negativo.
+        Permite calcular la ruta de mas alto valor en el grafo al negar siempre los pesos.
+        \\ \\
+        C++
+        \lstinputlisting[language=C++]{C++/Grafos/BellmanFord.cpp}
 
     \subsection{Articulation Points}
         Encuentra los nodos que si son retirados del grafo, producen dos componentes \\
